@@ -1,0 +1,17 @@
+name = "open-signal-index-api"
+main = "api/src/index.ts"
+compatibility_date = "2024-06-20"
+workers_dev = true
+
+[vars]
+TIMEZONE = "America/Chicago"
+HARD_EXCLUDE_REGEX = "(?i)^(?!.*(?:ice\\s*(?:checkpoint|raid|location)|live\\s*enforcement)).*$"
+# Provide libSQL connection details via environment or wrangler secret.
+# LIBSQL_URL = ""
+# LIBSQL_AUTH_TOKEN = ""
+
+[dev]
+persist = true
+
+[[triggers.crons]]
+crons = ["*/15 * * * *"]

@@ -1,0 +1,22 @@
+{
+  "name": "open-signal-index",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Prototype for Open Signal Index dashboard and ingestion stack.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w web\" \"npm run dev -w api\"",
+    "build": "npm run build -w web && npm run deploy -w api",
+    "deploy:all": "npm run build && npm run publish -w api && npm run deploy -w web && vercel --prod",
+    "lint": "npm run lint -w api && npm run lint -w web",
+    "format": "npm run format -w api && npm run format -w web"
+  },
+  "workspaces": [
+    "api",
+    "jobs",
+    "web"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vercel": "^33.2.0"
+  }
+}
