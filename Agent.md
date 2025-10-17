@@ -7,7 +7,7 @@ Secrets: env vars in function settings.
 Pros: 30–60 min to ship. No servers. Easy handoff.
 When: Pre-sales, pilots, teams without infra.
 
-Packages:
+Packages: (At least to start)
 ingest/ adapters: Bluesky, RSS, Trends, etc.
 nlp/ summarizer + dedupe (MinHash/SimHash) + EWMA anomalies.
 api/ REST: /search, /daily, /topics.
@@ -21,8 +21,10 @@ SOURCES=bluesky,rss
 LLM_PROVIDER=openai|azure|anthropic
 DB_URL=... REDIS_URL=...
 TIMEZONE=America/Chicago
-HARD_EXCLUDE_REGEX=... (safety filter)
+HARD_EXCLUDE_REGEX="(?i)^(?!.*(?:ice\s*(?:checkpoint|raid|location)|live\s*enforcement)).*$"
 Seed data: JSON fixtures to demo offline.
+
+
 Minimal deploy recipes
 A) Zero-infra
 Push UI: vercel --prod
