@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vscode/
+.env
+.env.local
+*.log
+wrangler-state/
+.DS_Store
+.svelte-kit/
+.vercel/
+.netlify/
